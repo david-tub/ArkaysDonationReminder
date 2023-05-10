@@ -10,6 +10,5 @@ Guild bank donation reminder including automatic execution of donations.
 
 
 ## Installation
-- Download project as zip file
-- unzip root folder to the game addon folder (by default \Documents\Elder Scrolls Online\live\AddOns)
-- rename the folder to "ArkaysDonationReminder" (to get \Documents\Elder Scrolls Online\live\AddOns\ArkaysDonationReminder\...)
+1. Download project as zip file
+2. Extract the subfolder "ArkaysDonationReminder" to the game addon folder: \Documents\Elder Scrolls Online\live\AddOns\ArkaysDonationReminder\ ...

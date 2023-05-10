@@ -1,10 +1,10 @@
 ## Title: |cd5b526Arkays|r Donation Reminder
 ## Description: Guild Bank Donation Reminder with automized transactions
 ## Author: DeadSoon
-## APIVersion: 101034 101035
+## APIVersion: 101037 101038
 ## SavedVariables: ArkaysDonationReminder_SV
-## Version: 2.0.3
-## AddOnVersion: 203
+## Version: 2.0.4
+## AddOnVersion: 204
 ## IsLibrary: false
 ## DependsOn: LibAddonMenu-2.0
 
