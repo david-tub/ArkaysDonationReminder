@@ -206,22 +206,27 @@ function ADR.initialize()
 	-- check for notification
 	ADR.checkForNotification()
 	
-	if ADR.savedVars.displayDonationSum then
-		-- first, generate two text controls in guilds menus (history tab)
-		ADR.createTextControlsGuildHistory()
+	-- ----------
+	-- February 2026: Disabled the feature to calculate and display guild donations, since the guild history API was completely rewritten by ZOS end of 2023
+	-- currently used API functions and constants are not existing/working anymore
+
+	-- if ADR.savedVars.displayDonationSum then
+	-- 	-- first, generate two text controls in guilds menus (history tab)
+	-- 	ADR.createTextControlsGuildHistory()
 		
-		-- process guild events and update and display income for current and last week
-		-- event below is triggered always when receiving guild events. However, after reloading the data remains (will not again requested)
-		ADR.displayGuildsIncome()
+	-- 	-- process guild events and update and display income for current and last week
+	-- 	-- event below is triggered always when receiving guild events. However, after reloading the data remains (will not again requested)
+	-- 	ADR.displayGuildsIncome()
 	
-		-- swap values in guild history tab depending on selected guild
-		CALLBACK_MANAGER:RegisterCallback("OnGuildSelected", function()
-			ADR.setIncomeText(GUILD_SELECTOR.guildId)
-		end)
+	-- 	-- swap values in guild history tab depending on selected guild
+	-- 	CALLBACK_MANAGER:RegisterCallback("OnGuildSelected", function()
+	-- 		ADR.setIncomeText(GUILD_SELECTOR.guildId)
+	-- 	end)
 		
-		-- listen for new data (especially if user manually or other addons (MM or LibHistoire) request more data)
-		EVENT_MANAGER:RegisterForEvent(ADR.appName, EVENT_GUILD_HISTORY_RESPONSE_RECEIVED, ADR.newDataReceived)
-	end
+	-- 	-- listen for new data (especially if user manually or other addons (MM or LibHistoire) request more data)
+	-- 	EVENT_MANAGER:RegisterForEvent(ADR.appName, EVENT_GUILD_HISTORY_RESPONSE_RECEIVED, ADR.newDataReceived)
+	-- end
+	-- ----------
 end
 
 
@@ -348,6 +353,9 @@ function ADR.initializeSettingsMenu()
 			setFunc = function(value) ADR.savedVars.displayDonationSum = value end,
 			default = ADR.defaults.displayDonationSum,
 			requiresReload = true,
+			-- February 2026: Feature is disabled, since the guild history API was completely rewritten by ZOS end of 2023
+			disabled = true,
+			warning = ADR.colors.bronze .. "Due to API changes not available anymore|r",
         },
 	}
 	
